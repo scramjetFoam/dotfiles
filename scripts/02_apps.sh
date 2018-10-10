@@ -3,13 +3,12 @@ install_brew_apps() {
   brew install sox --with-flac --with-lame --with-libvorbis
   brew install zsh --without-etcdir
 
-  brew install aria2 cpulimit duti eye-d3 ffmpeg geckodriver gifski git handbrake haskell-stack hr httpie imagemagick jq mas massren mediainfo mkvtoolnix mp4v2 pup ripgrep rmlint shellcheck subliminal svgcleaner trash tree youtube-dl z
+  brew install aria2 cpulimit duti eye-d3 ffmpeg geckodriver gifski git handbrake haskell-stack hr httpie imagemagick jq mas massren mediainfo mkvtoolnix mp4v2 neovim pup ripgrep rmlint shellcheck subliminal svgcleaner trash tree youtube-dl z
 
   # install zsh_plugins
   brew install zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
 
   # install software from other taps
-  brew install neovim/neovim/neovim
   brew install vitorgalvao/kepubify/kepubify
 
   # install and configure tor
