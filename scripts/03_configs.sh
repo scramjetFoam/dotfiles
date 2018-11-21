@@ -44,7 +44,7 @@ set_default_apps() {
   duti -s "${afp_latest}" afphoto all
 }
 
-# set_keyboard_shortcuts() {
+set_keyboard_shortcuts() {
   # Custom keyboard shortcuts for apps
   # @ is ⌘; ~ is ⌥; $ is ⇧; ^ is ⌃
   # read more at https://web.archive.org/web/20140810142907/http://hints.macworld.com/article.php?story=20131123074223584
@@ -52,12 +52,12 @@ set_default_apps() {
   # Global
   # defaults write -g NSUserKeyEquivalents '{}'
 
-  # Tweetbot
-  # defaults write com.tapbots.TweetbotMac NSUserKeyEquivalents '{
-  #   "Open Links"="l";
-  #   "Send to Pinboard"="$l";
-  # }'
-# }
+  # ScreenFlow 5
+  defaults write net.telestream.screenflow5 NSUserKeyEquivalents '{
+    "Add Screen Recording Action"="~r";
+    "Split Clip"="s";
+  }'
+}
 
 install_commercial_fonts() {
   readonly local tmp_fonts_dir="$(mktemp -d)"

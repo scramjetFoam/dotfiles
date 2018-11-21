@@ -25,7 +25,7 @@ run_install_dotfiles() {
 
   restore_settings
   set_default_apps
-  # set_keyboard_shortcuts
+  set_keyboard_shortcuts
   install_commercial_fonts
   configure_zsh
   install_nvim_packages
