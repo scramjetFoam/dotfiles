@@ -1,18 +1,19 @@
 {
-  "timeStamp": 1459014463762,
-  "version": "1.6.4",
+  "timeStamp": 1543853837285,
+  "version": "1.17.0",
   "userSettings": {
     "advancedUserEnabled": false,
+    "alwaysDetachLogger": false,
     "autoUpdate": true,
     "cloudStorageEnabled": false,
     "collapseBlocked": true,
     "colorBlindFriendly": true,
     "contextMenuEnabled": false,
     "dynamicFilteringEnabled": false,
-    "experimentalEnabled": false,
-    "externalLists": "! Examples:\n! https://easylist-downloads.adblockplus.org/antiadblockfilters.txt\n! https://easylist-downloads.adblockplus.org/fb_annoyances_full.txt\n! https://easylist-downloads.adblockplus.org/fb_annoyances_sidebar.txt\n! https://easylist-downloads.adblockplus.org/fb_annoyances_newsfeed.txt\n! https://easylist-downloads.adblockplus.org/yt_annoyances_full.txt\n! https://easylist-downloads.adblockplus.org/yt_annoyances_comments.txt\n! https://easylist-downloads.adblockplus.org/yt_annoyances_suggestions.txt\n! https://easylist-downloads.adblockplus.org/yt_annoyances_other.txt\nhttp://mute.bradconte.com/mute.txt",
+    "externalLists": "http://mute.bradconte.com/mute.txt\nhttps://easylist-downloads.adblockplus.org/easylist_noelemhide.txt\nhttps://mirror1.malwaredomains.com/files/immortal_domains.txt\nhttps://raw.githubusercontent.com/jspenguin2017/uBlockProtector/master/uBlockProtectorList.txt\nhttps://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt\nhttps://ssl.bblck.me/blacklists/ublock-origin.txt\nhttps://www.fanboy.co.nz/r/fanboy-ultimate.txt\nhttps://xuhaiyang1234.gitlab.io/AAK-Cont/dist/aak-cont-list-ubo.txt",
     "firewallPaneMinimized": true,
     "hyperlinkAuditingDisabled": true,
+    "ignoreGenericCosmeticFilters": false,
     "largeMediaSize": 50,
     "parseAllABPHideFilters": true,
     "prefetchingDisabled": true,
@@ -21,195 +22,60 @@
     "tooltipsDisabled": false,
     "webrtcIPAddressHidden": true
   },
-  "filterLists": {
-    "assets/user/filters.txt": {
-      "group": "default",
-      "off": false,
-      "entryCount": 0,
-      "entryUsedCount": 0
-    },
-    "http://mute.bradconte.com/mute.txt": {
-      "title": "Mute",
-      "group": "custom",
-      "external": true,
-      "off": false,
-      "entryCount": 169,
-      "entryUsedCount": 169
-    },
-    "assets/thirdparties/easylist-downloads.adblockplus.org/easylist.txt": {
-      "title": "EasyList",
-      "group": "ads",
-      "homeURL": "https://easylist-downloads.adblockplus.org/easylist.txt",
-      "supportURL": "https://forums.lanik.us/",
-      "off": false,
-      "entryCount": 62435,
-      "entryUsedCount": 1
-    },
-    "https://easylist-downloads.adblockplus.org/easylist_noelemhide.txt": {
-      "off": false,
-      "title": "EasyList without element hiding rules",
-      "group": "ads",
-      "supportURL": "https://forums.lanik.us/",
-      "entryCount": 24354,
-      "entryUsedCount": 0
-    },
-    "assets/thirdparties/easylist-downloads.adblockplus.org/easyprivacy.txt": {
-      "title": "EasyPrivacy",
-      "group": "privacy",
-      "homeURL": "https://easylist-downloads.adblockplus.org/easyprivacy.txt",
-      "supportURL": "https://forums.lanik.us/",
-      "off": false,
-      "entryCount": 11233,
-      "entryUsedCount": 5
-    },
-    "https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt": {
-      "off": false,
-      "title": "Fanboy’s Annoyance List",
-      "group": "social",
-      "supportURL": "https://forums.lanik.us/",
-      "entryCount": 22029,
-      "entryUsedCount": 1
-    },
-    "https://easylist-downloads.adblockplus.org/fanboy-social.txt": {
-      "off": false,
-      "title": "Fanboy’s Social Blocking List",
-      "group": "social",
-      "supportURL": "https://forums.lanik.us/",
-      "entryCount": 13299,
-      "entryUsedCount": 0
-    },
-    "http://hosts-file.net/.%5Cad_servers.txt": {
-      "off": false,
-      "title": "hpHosts’ Ad and tracking servers",
-      "group": "multipurpose",
-      "supportURL": "http://hosts-file.net/",
-      "entryCount": 47709,
-      "entryUsedCount": 40725
-    },
-    "https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt": {
-      "off": false,
-      "title": "Malvertising filter list by Disconnect",
-      "group": "malware",
-      "entryCount": 5615,
-      "entryUsedCount": 283
-    },
-    "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt": {
-      "off": false,
-      "title": "Malware filter list by Disconnect",
-      "group": "malware",
-      "entryCount": 2879,
-      "entryUsedCount": 96
-    },
-    "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt": {
-      "off": false,
-      "title": "Basic tracking list by Disconnect",
-      "group": "privacy",
-      "entryCount": 34,
-      "entryUsedCount": 28
-    },
-    "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt": {
-      "off": false,
-      "title": "Adblock Warning Removal List",
-      "group": "ads",
-      "supportURL": "https://forums.lanik.us/",
-      "entryCount": 111,
-      "entryUsedCount": 106
-    },
-    "http://malwaredomains.lehigh.edu/files/immortal_domains.txt": {
-      "off": false,
-      "title": "Malware domains (long-lived)",
-      "group": "malware",
-      "supportURL": "http://www.malwaredomains.com/",
-      "entryCount": 1250,
-      "entryUsedCount": 1
-    },
-    "assets/thirdparties/mirror1.malwaredomains.com/files/justdomains": {
-      "title": "Malware domains",
-      "group": "malware",
-      "homeURL": "https://mirror.cedia.org.ec/malwaredomains/justdomains",
-      "supportURL": "http://www.malwaredomains.com/",
-      "off": false,
-      "entryCount": 17739,
-      "entryUsedCount": 17621
-    },
-    "assets/thirdparties/pgl.yoyo.org/as/serverlist": {
-      "title": "Peter Lowe’s Ad server list",
-      "group": "ads",
-      "homeURL": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext",
-      "supportURL": "https://pgl.yoyo.org/adservers/",
-      "off": false,
-      "entryCount": 2422,
-      "entryUsedCount": 1571
-    },
-    "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt": {
-      "off": false,
-      "title": "Anti-Adblock Killer | Reek",
-      "group": "ads",
-      "supportURL": "https://github.com/reek/anti-adblock-killer",
-      "instructionURL": "https://github.com/reek/anti-adblock-killer#instruction",
-      "entryCount": 1736,
-      "entryUsedCount": 1686
-    },
-    "http://someonewhocares.org/hosts/hosts": {
-      "off": false,
-      "title": "Dan Pollock’s hosts file",
-      "group": "multipurpose",
-      "supportURL": "http://someonewhocares.org/hosts/",
-      "entryCount": 12114,
-      "entryUsedCount": 10073
-    },
-    "https://raw.githubusercontent.com/Dawsey21/Lists/master/adblock-list.txt": {
-      "off": false,
-      "title": "Spam404",
-      "group": "malware",
-      "supportURL": "http://www.spam404.com/",
-      "entryCount": 5413,
-      "entryUsedCount": 5405
-    },
-    "http://winhelp2002.mvps.org/hosts.txt": {
-      "off": false,
-      "title": "MVPS HOSTS",
-      "group": "multipurpose",
-      "supportURL": "http://winhelp2002.mvps.org/",
-      "entryCount": 13544,
-      "entryUsedCount": 13151
-    },
-    "https://www.fanboy.co.nz/enhancedstats.txt": {
-      "off": false,
-      "title": "Fanboy’s Enhanced Tracking List",
-      "group": "privacy",
-      "supportURL": "https://forums.lanik.us/",
-      "entryCount": 929,
-      "entryUsedCount": 0
-    },
-    "https://www.fanboy.co.nz/fanboy-antifacebook.txt": {
-      "off": false,
-      "title": "Anti-ThirdpartySocial (see warning inside list)",
-      "group": "social",
-      "supportURL": "https://forums.lanik.us/",
-      "entryCount": 63,
-      "entryUsedCount": 43
-    },
-    "https://www.fanboy.co.nz/r/fanboy-ultimate.txt": {
-      "off": false,
-      "title": "Fanboy+Easylist-Merged Ultimate List",
-      "group": "multipurpose",
-      "supportURL": "https://forums.lanik.us/",
-      "entryCount": 96656,
-      "entryUsedCount": 96608
-    },
-    "assets/thirdparties/www.malwaredomainlist.com/hostslist/hosts.txt": {
-      "title": "Malware Domain List",
-      "group": "malware",
-      "homeURL": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
-      "off": false,
-      "entryCount": 1572,
-      "entryUsedCount": 1572
-    }
+  "selectedFilterLists": [
+    "https://raw.githubusercontent.com/jspenguin2017/uBlockProtector/master/uBlockProtectorList.txt",
+    "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt",
+    "https://mirror1.malwaredomains.com/files/immortal_domains.txt",
+    "https://www.fanboy.co.nz/r/fanboy-ultimate.txt",
+    "https://easylist-downloads.adblockplus.org/easylist_noelemhide.txt",
+    "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
+    "https://ssl.bblck.me/blacklists/ublock-origin.txt",
+    "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt",
+    "https://xuhaiyang1234.gitlab.io/AAK-Cont/dist/aak-cont-list-ubo.txt",
+    "plowe-0",
+    "mvps-0",
+    "hphosts",
+    "dpollock-0",
+    "fanboy-social",
+    "fanboy-cookiemonster",
+    "fanboy-thirdparty_social",
+    "fanboy-annoyance",
+    "adguard-annoyance",
+    "spam404-0",
+    "malware-1",
+    "malware-0",
+    "disconnect-malvertising",
+    "fanboy-enhanced",
+    "easyprivacy",
+    "easylist",
+    "adguard-generic",
+    "awrl-0",
+    "ublock-unbreak",
+    "ublock-abuse",
+    "ublock-privacy",
+    "ublock-experimental",
+    "ublock-badware",
+    "ublock-filters",
+    "user-filters"
+  ],
+  "hiddenSettings": {
+    "assetFetchTimeout": 30,
+    "autoUpdateAssetFetchPeriod": 120,
+    "autoUpdatePeriod": 7,
+    "cacheStorageCompression": true,
+    "debugScriptlets": false,
+    "cacheControlForFirefox1376932": "no-cache, no-store, must-revalidate",
+    "ignoreRedirectFilters": false,
+    "ignoreScriptInjectFilters": false,
+    "manualUpdateAssetFetchPeriod": 500,
+    "popupFontSize": "unset",
+    "requestJournalProcessPeriod": 1000,
+    "suspendTabsUntilReady": false,
+    "userResourcesLocation": "unset"
   },
-  "netWhitelist": "coursera.org\ntvshowtime.com",
+  "netWhitelist": "idmsa.apple.com",
   "dynamicFilteringString": "",
   "urlFilteringString": "",
-  "hostnameSwitchesString": "",
-  "userFilters": ""
+  "hostnameSwitchesString": "no-cosmetic-filtering: letterboxd.com true\nno-cosmetic-filtering: superuser.com true\nno-cosmetic-filtering: dribbble.com true\nno-cosmetic-filtering: www.tvtime.com true\nno-csp-reports: * true\nno-scripting: behind-the-scene false",
+  "userFilters": "! 01/06/2018, 18:11:13 https://www.youtube.com/watch?v=R0dg20WMYjY\nwww.youtube.com##.opened\n\n! 05/06/2018, 02:03:35 https://www.cultofmac.com/88608/recreate-the-game-boy-camera-with-8-bit-pocket-camera-app-photography/\nwww.cultofmac.com###ez-cookie-dialog-wrapper\n\n! 06/06/2018, 21:15:32 http://knowyourmeme.com/photos/572079-how-to-draw-an-owl\nknowyourmeme.com###sp_message_panel_id1528316079965\n\n! 06/06/2018, 21:19:26 http://knowyourmeme.com/memes/how-to-draw-an-owl\nknowyourmeme.com###sp_message_panel_id1528316327427\n\n! 06/06/2018, 23:49:41 https://www.livescience.com/61627-ancient-virus-brain.html\nwww.livescience.com##.prism-modal-content\n\n! 11/06/2018, 20:13:41 https://myanimelist.net/anime/2775/Genocyber\nmyanimelist.net##.modal-mask\n\n! 11/06/2018, 20:13:48 https://myanimelist.net/anime/2775/Genocyber\nmyanimelist.net##.modal-container\n\n! 13/06/2018, 16:47:32 http://www.idownloadblog.com/2018/06/08/macos-mojave-stacks/\nwww.idownloadblog.com##.pm-dialog\n"
 }
