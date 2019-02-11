@@ -6,11 +6,6 @@ install_brew_apps() {
 
   # install software from other taps
   brew install vitorgalvao/kepubify/kepubify
-
-  # install and configure tor
-  brew install tor torsocks
-  cp "$(brew --prefix)/etc/tor/torrc.sample" "$(brew --prefix)/etc/tor/torrc"
-  echo 'ExitNodes {us}' >> "$(brew --prefix)/etc/tor/torrc"
 }
 
 install_cask_apps() {
