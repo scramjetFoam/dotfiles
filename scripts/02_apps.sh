@@ -22,7 +22,7 @@ install_cask_apps() {
   brew cask install xbox360-controller-driver-unofficial
 
   # prefpanes, qlplugins, colorpickers
-  brew cask install betterzipql epubquicklook qlcolorcode qlmarkdown qlplayground qlstephen quicklook-json quicklookase
+  brew cask install betterzipql epubquicklook qlcolorcode qlimagesize qlmarkdown qlplayground qlstephen quicklook-json quicklookase
 
   # fonts
   brew tap homebrew/cask-fonts
