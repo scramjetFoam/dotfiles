@@ -1,5 +1,5 @@
 install_brew_apps() {
-  brew install aria2 cpulimit duti ffmpeg geckodriver gifski git handbrake haskell-stack hr httpie imagemagick jq mas massren mediainfo megatools mkvtoolnix mp4v2 mpv neovim pup ripgrep rmlint shellcheck sox svgcleaner trash tree youtube-dl z zsh
+  brew install aria2 cpulimit duti exiftool ffmpeg geckodriver gifski git handbrake haskell-stack hr httpie imagemagick jq mas massren mediainfo megatools mkvtoolnix mp4v2 mpv neovim pup ripgrep rmlint shellcheck sox svgcleaner trash tree youtube-dl z zsh
 
   # install zsh_plugins
   brew install zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
