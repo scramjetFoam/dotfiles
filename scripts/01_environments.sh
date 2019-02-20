@@ -11,7 +11,7 @@ install_python() {
   eval "$(pyenv init -)" # activate pyenv
 
   # Install some eggs
-  pip install eyed3 instapy-cli neovim subliminal
+  pip install instapy-cli neovim subliminal
 }
 
 install_ruby() {
