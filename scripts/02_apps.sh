@@ -10,7 +10,7 @@ install_brew_apps() {
 
 install_cask_apps() {
   renew_sudo # to make the Caskroom on first install
-  brew cask install alfred apple-events atom bartender bettertouchtool blockblock dolphin dropbox electron-api-demos firefox fog gifloopcoder gitup imageoptim imitone iterm2 keka lulu phoenix processing protonvpn shotcut steam transmission whatsyoursign wwdc yacreader
+  brew cask install alfred apple-events atom bartender bettertouchtool blockblock dolphin dropbox electron-api-demos firefox fog gifloopcoder gitup imageoptim imitone iterm2 keka lulu phoenix processing protonvpn shotcut steam transmission vmware-fusion whatsyoursign wwdc yacreader
 
   # install alternative versions
   brew tap homebrew/cask-versions
