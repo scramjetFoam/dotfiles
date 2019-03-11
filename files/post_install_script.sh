@@ -11,7 +11,7 @@ request() { # output a message and open an app
   shift 2
 
   echo "$(tput setaf 5)•$(tput sgr0) ${message}"
-  open -Wa "${app}" --args "$@" # don't continue until app closes
+  open -Wa "${app}" --args "${@}" # don't continue until app closes
 }
 
 request_preferences() { # 'request' for System Preferences
