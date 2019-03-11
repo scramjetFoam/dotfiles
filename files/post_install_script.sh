@@ -206,18 +206,6 @@ request_chrome_extension 'Google Chrome' 'httpseverywhere' 'gcbommkclmclpchllfje
 request_chrome_extension 'Google Chrome' 'ublockorigin' 'cjpalhdlnbpafiamejdnhcphjbkeiagm'
 request_chrome_extension 'Google Chrome' 'unsplash-instant' 'pejkokffkapolfffcgbmdmhdelanoaih'
 
-request_chrome_extension 'Google Chrome Canary' 'chromeextensionsdeveloper' 'ohmmkhmmmpcnpikjeljgnaoabkaalbgc'
-request_chrome_extension 'Google Chrome Canary' 'daydream' 'oajnmbophdhdobfpalhkfgahchpcoali'
-request_chrome_extension 'Google Chrome Canary' 'emmet-review' 'epejoicbhllgiimigokgjdoijnpaphdp'
-request_chrome_extension 'Google Chrome Canary' 'emmetlivestyle' 'diebikgmpmeppiilkaijjbdgciafajmg'
-request_chrome_extension 'Google Chrome Canary' 'honey' 'bmnlcjabgnpnenekpadlanbbkooimhnj'
-request_chrome_extension 'Google Chrome Canary' 'css-peeper' 'mbnbehikldjhnfehhnaidhjhoofhpehk'
-request_chrome_extension 'Google Chrome Canary' 'pesticide' 'bblbgcheenepgnnajgfpiicnbbdmmooh'
-request_chrome_extension 'Google Chrome Canary' 'selectorgadget' 'mhjhnkcfbdhnjickkkdbjoemdmbfginb'
-request_chrome_extension 'Google Chrome Canary' 'snappysnippet' 'blfngdefapoapkcdibbdkigpeaffgcil'
-request_chrome_extension 'Google Chrome Canary' 'tape' 'jmfleijdbicilompnnombcbkcgidbefb'
-request_chrome_extension 'Google Chrome Canary' 'thecamelizer' 'ghnomdcacenbmilgjigehppbamfndblo'
-request_chrome_extension 'Google Chrome Canary' 'tincr' 'lfjbhpnjiajjgnjganiaggebdhhpnbih'
 
 request 'Remove Google-imposed extensions.' 'Google Chrome'
 
