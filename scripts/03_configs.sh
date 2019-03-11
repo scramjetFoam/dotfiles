@@ -1,8 +1,8 @@
-restore_settings() {
+function restore_settings {
   ruby "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/darkhouse/_run_house/quick_restore.rb"
 }
 
-set_default_apps() {
+function set_default_apps {
   # open the mpv app bundle, so the system actually sees it (since it's not in a standard location)
   readonly local mpv_location="$(readlink "$(brew --prefix)/bin/mpv" | sed "s:^\.\.:$(brew --prefix):;s:bin/mpv$:mpv.app:")"
   if [[ -n "${mpv_location}" ]]; then
@@ -44,7 +44,7 @@ set_default_apps() {
   duti -s "${afp_latest}" afphoto all
 }
 
-set_keyboard_shortcuts() {
+function set_keyboard_shortcuts {
   # Custom keyboard shortcuts for apps
   # @ is ⌘; ~ is ⌥; $ is ⇧; ^ is ⌃
   # read more at https://web.archive.org/web/20140810142907/http://hints.macworld.com/article.php?story=20131123074223584
@@ -59,7 +59,7 @@ set_keyboard_shortcuts() {
   }'
 }
 
-install_commercial_fonts() {
+function install_commercial_fonts {
   readonly local tmp_fonts_dir="$(mktemp -d)"
 
   for font_zip in "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/fonts/"*; do
@@ -69,21 +69,21 @@ install_commercial_fonts() {
   find "${tmp_fonts_dir}" -iname '*otf' -exec mv '{}' "${HOME}/Library/Fonts" \;
 }
 
-configure_zsh() { # make zsh default shell
+function configure_zsh { # make zsh default shell
   sudo --stdin sh -c 'echo "/usr/local/bin/zsh" >> /etc/shells' <<< "${sudo_password}" 2> /dev/null
   sudo --stdin chsh -s '/usr/local/bin/zsh' "${USER}" <<< "${sudo_password}" 2> /dev/null
 }
 
-install_nvim_packages() {
+function install_nvim_packages {
   curl --silent --location 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' --output "${HOME}/.config/nvim/autoload/plug.vim" --create-dirs
   nvim +PlugInstall +qall > /dev/null
 }
 
-install_atom_packages() {
+function install_atom_packages {
   apm install highlight-line language-haskell language-pug language-swift linter linter-eslint linter-jsonlint linter-rubocop linter-shellcheck linter-write-good relative-numbers vim-mode-plus vim-mode-plus-keymaps-for-surround
 }
 
-configure_git() {
+function configure_git {
   git config --global user.name "${name}"
   git config --global user.email "${github_email}"
   git config --global github.user "${github_username}"
@@ -93,16 +93,16 @@ configure_git() {
   git config --global rerere.autoupdate true
 }
 
-configure_massren() {
+function configure_massren {
   massren --config editor 'nvim'
   massren --config include_header 0
 }
 
-configure_pinboard_scripts() {
+function configure_pinboard_scripts {
   pinboardlinkcheck --save-token --token "${pinboard_token}"
 }
 
-install_launchagents() {
+function install_launchagents {
   readonly local user_launchagents_dir="${HOME}/Library/LaunchAgents"
   readonly local global_launchdaemons_dir='/Library/LaunchDaemons/'
   mkdir -p "${user_launchagents_dir}"
@@ -127,7 +127,7 @@ install_launchagents() {
   rmdir -p "${helper_files}/launchd_plists"/* 2> /dev/null
 }
 
-lower_startup_chime() {
+function lower_startup_chime {
   curl -fsSL 'https://raw.githubusercontent.com/vitorgalvao/lowchime/master/lowchime' --output '/tmp/lowchime'
   chmod +x '/tmp/lowchime'
   sudo --stdin /tmp/lowchime install <<< "${sudo_password}" 2> /dev/null

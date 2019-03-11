@@ -1,4 +1,4 @@
-install_brew_apps() {
+function install_brew_apps {
   brew install aria2 cpulimit duti exiftool ffmpeg geckodriver gifski git handbrake haskell-stack hr httpie imagemagick jq mas massren mediainfo megatools mkvtoolnix mp4v2 mpv neovim pup ripgrep rmlint shellcheck sox svgcleaner trash tree youtube-dl z zsh
 
   # install zsh_plugins
@@ -8,7 +8,7 @@ install_brew_apps() {
   brew install vitorgalvao/kepubify/kepubify
 }
 
-install_cask_apps() {
+function install_cask_apps {
   renew_sudo # to make the Caskroom on first install
   brew cask install alfred apple-events atom bartender bettertouchtool blockblock dolphin dropbox electron-api-demos firefox fog gifloopcoder gitup imageoptim imitone iterm2 keka lulu phoenix processing protonvpn shotcut steam transmission vmware-fusion whatsyoursign wwdc yacreader
 
@@ -43,7 +43,7 @@ install_cask_apps() {
   brew cask install font-pecita
 }
 
-install_tinyscripts() {
+function install_tinyscripts {
   brew tap vitorgalvao/tiny-scripts
   brew install cask-analytics cask-repair climergebutton contagem-edp gfv human-media-time labelcolor lossless-compress lovecolor macspoof pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file workflows-renamer
 }

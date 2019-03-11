@@ -1,9 +1,9 @@
-install_brew() {
+function install_brew {
   renew_sudo
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
 }
 
-install_python() {
+function install_python {
   brew install pyenv
 
   pyenv install "$(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\|b' | tail -1)" # install latest stable python
@@ -14,7 +14,7 @@ install_python() {
   pip install instapy-cli neovim subliminal
 }
 
-install_ruby() {
+function install_ruby {
   brew install chruby ruby-install
 
   ruby-install --src-dir "$(mktemp -d)" ruby # install latest stable ruby
@@ -25,7 +25,7 @@ install_ruby() {
   gem install --no-document neovim nokogiri pry redcarpet ronn rubocop video_transcoding watir
 }
 
-install_node() {
+function install_node {
   brew install nvm
 
   # activate nvm

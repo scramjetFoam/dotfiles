@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # helper functions
-info() {
+function info {
   echo "$(tput setaf 2)•$(tput sgr0) ${1}"
 }
 
-request() { # output a message and open an app
+function request { # output a message and open an app
   local message="${1}"
   local app="${2}"
   shift 2
@@ -14,11 +14,11 @@ request() { # output a message and open an app
   open -Wa "${app}" --args "${@}" # don't continue until app closes
 }
 
-request_preferences() { # 'request' for System Preferences
+function request_preferences { # 'request' for System Preferences
   request "${1}" 'System Preferences'
 }
 
-request_chromium_extension() { # 'request' for Google Chrome extensions
+function request_chromium_extension { # 'request' for Google Chrome extensions
   local chromium_app="${1}"
   local extension_short_name="${2}"
   local extension_code="${3}"
@@ -26,7 +26,7 @@ request_chromium_extension() { # 'request' for Google Chrome extensions
   request "Install '${extension_short_name}' extension." "${chromium_app}" --no-first-run "https://chrome.google.com/webstore/detail/${extension_short_name}/${extension_code}"
 }
 
-preferences_pane() { # open 'System Preferences' is specified pane
+function preferences_pane { # open 'System Preferences' is specified pane
   local pane="${1}"
   local tab="${2}" # And optionally specify a tab in the pane
 

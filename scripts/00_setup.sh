@@ -1,12 +1,12 @@
-bold_echo() { # helper function for bold text
+function bold_echo { # helper function for bold text
   echo "$(tput bold)${1}$(tput sgr0)"
 }
 
-renew_sudo() { # helper function for when the following command needs `sudo` active but shouldn't be called with it
+function renew_sudo { # helper function for when the following command needs `sudo` active but shouldn't be called with it
   sudo --stdin --validate <<< "${sudo_password}" 2> /dev/null
 }
 
-initial_setup() {
+function initial_setup {
   export PATH="/usr/local/bin:${PATH}"
 
   caffeinate & # prevent computer from going to sleep
@@ -17,7 +17,7 @@ initial_setup() {
   readonly post_install_script="${HOME}/Desktop/post_install_script.sh"
 }
 
-ask_details() {
+function ask_details {
   # ask for the administrator password upfront, for commands that require `sudo`
   clear
   bold_echo 'Insert the "sudo" password now (will not be echoed).'
@@ -51,12 +51,12 @@ ask_details() {
   clear
 }
 
-sync_icloud() {
+function sync_icloud {
   bold_echo 'Press the download icons to download everything.'
   read -n0 -p '↵ to continue.'
   open "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"
 }
 
-update_system() {
+function update_system {
   softwareupdate --install --all
 }
