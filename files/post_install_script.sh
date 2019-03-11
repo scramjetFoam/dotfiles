@@ -18,12 +18,12 @@ request_preferences() { # 'request' for System Preferences
   request "${1}" 'System Preferences'
 }
 
-request_chrome_extension() { # 'request' for Google Chrome extensions
-  local chrome_or_canary="${1}"
+request_chromium_extension() { # 'request' for Google Chrome extensions
+  local chromium_app="${1}"
   local extension_short_name="${2}"
   local extension_code="${3}"
 
-  request "Install '${extension_short_name}' extension." "${chrome_or_canary}" --no-first-run "https://chrome.google.com/webstore/detail/${extension_short_name}/${extension_code}"
+  request "Install '${extension_short_name}' extension." "${chromium_app}" --no-first-run "https://chrome.google.com/webstore/detail/${extension_short_name}/${extension_code}"
 }
 
 preferences_pane() { # open 'System Preferences' is specified pane
@@ -197,15 +197,14 @@ request_preferences 'Download and keep only "Ava" and "Joana" voices.'
 preferences_pane_anchor 'Mouse' 'com.apple.preference.universalaccess'
 request_preferences 'Under "Trackpad Options…", enable three finger drag.'
 
-# chrome extentions
+# chromium extentions
 
 echo
 
-request_chrome_extension 'Google Chrome' '1password-password-manage' 'aomjjhallfgjeglblehebfpbcfeobpgk'
-request_chrome_extension 'Google Chrome' 'httpseverywhere' 'gcbommkclmclpchllfjekcdonpmejbdp'
-request_chrome_extension 'Google Chrome' 'ublockorigin' 'cjpalhdlnbpafiamejdnhcphjbkeiagm'
-request_chrome_extension 'Google Chrome' 'unsplash-instant' 'pejkokffkapolfffcgbmdmhdelanoaih'
-
+request_chromium_extension 'Google Chrome' '1password-password-manage' 'aomjjhallfgjeglblehebfpbcfeobpgk'
+request_chromium_extension 'Google Chrome' 'httpseverywhere' 'gcbommkclmclpchllfjekcdonpmejbdp'
+request_chromium_extension 'Google Chrome' 'ublockorigin' 'cjpalhdlnbpafiamejdnhcphjbkeiagm'
+request_chromium_extension 'Google Chrome' 'unsplash-instant' 'pejkokffkapolfffcgbmdmhdelanoaih'
 
 request 'Remove Google-imposed extensions.' 'Google Chrome'
 
