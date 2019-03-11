@@ -25,7 +25,7 @@ ask_details() {
   until sudo --non-interactive true 2> /dev/null; do # if password is wrong, keep asking
     read -s -p 'Password: ' sudo_password
     echo
-    sudo --stdin --validate <<< "${sudo_password}" 2> /dev/null
+    renew_sudo
   done
 
   clear
