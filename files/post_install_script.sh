@@ -27,17 +27,16 @@ request_chromium_extension() { # 'request' for Google Chrome extensions
 }
 
 preferences_pane() { # open 'System Preferences' is specified pane
-  osascript -e "tell application \"System Preferences\"
-    reveal pane \"${1}\"
-    activate
-  end tell" &> /dev/null
-}
+  local pane="${1}"
+  local tab="${2}" # And optionally specify a tab in the pane
 
-preferences_pane_anchor() { # open 'System Preferences' is specified pane and tab
-  osascript -e "tell application \"System Preferences\"
-    reveal anchor \"${1}\" of pane \"${2}\"
-    activate
-  end tell" &> /dev/null
+  if [[ -z "${tab}" ]]; then
+    osascript -e "tell application \"System Preferences\" to reveal pane \"${pane}\"" 1>/dev/null
+  else
+    osascript -e "tell application \"System Preferences\" to reveal anchor \"${tab}\" of pane \"${pane}\"" 1>/dev/null
+  fi
+
+  osascript -e "tell application \"System Preferences\" to activate"
 }
 
 # intial message
@@ -170,10 +169,10 @@ request_preferences 'Always prefer tabs when opening documents.'
 preferences_pane 'com.apple.preference.displays'
 request_preferences 'Turn off showing mirroring options in the menu bar.'
 
-preferences_pane_anchor 'shortcutsTab' 'com.apple.preference.keyboard'
+preferences_pane 'com.apple.preference.keyboard' 'shortcutsTab'
 request_preferences "Turn off Spotlight's keyboard shortcut."
 
-preferences_pane_anchor 'Dictation' 'com.apple.preference.keyboard'
+preferences_pane 'com.apple.preference.keyboard' 'Dictation'
 request_preferences 'Download other languages.'
 
 preferences_pane 'com.apple.preference.trackpad'
@@ -191,10 +190,10 @@ request_preferences 'Turn off Guest User account.'
 preferences_pane 'com.apple.preference.speech'
 request_preferences 'Set Siri voice.'
 
-preferences_pane_anchor 'TextToSpeech' 'com.apple.preference.universalaccess'
+preferences_pane 'com.apple.preference.universalaccess' 'TextToSpeech'
 request_preferences 'Download and keep only "Ava" and "Joana" voices.'
 
-preferences_pane_anchor 'Mouse' 'com.apple.preference.universalaccess'
+preferences_pane 'com.apple.preference.universalaccess' 'Mouse'
 request_preferences 'Under "Trackpad Options…", enable three finger drag.'
 
 # chromium extentions
