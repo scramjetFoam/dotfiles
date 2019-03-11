@@ -204,11 +204,7 @@ echo
 request_chrome_extension 'Google Chrome' '1password-password-manage' 'aomjjhallfgjeglblehebfpbcfeobpgk'
 request_chrome_extension 'Google Chrome' 'httpseverywhere' 'gcbommkclmclpchllfjekcdonpmejbdp'
 request_chrome_extension 'Google Chrome' 'ublockorigin' 'cjpalhdlnbpafiamejdnhcphjbkeiagm'
-# new tab extensions
-request_chrome_extension 'Google Chrome' 'dribbble-new-tab' 'hmhjbefkpednjogghoibpejdmemkinbn'
-#request_chrome_extension 'Google Chrome' 'embark-new-tab-page' 'aeajehgeohhgjbhhbicilpenjfcbfnpg'
-#request_chrome_extension 'Google Chrome' 'muzli-2-stay-inspired' 'glcipcfhmopcgidicgdociohdoicpdfc'
-#request_chrome_extension 'Google Chrome' 'unsplash-instant' 'pejkokffkapolfffcgbmdmhdelanoaih'
+request_chrome_extension 'Google Chrome' 'unsplash-instant' 'pejkokffkapolfffcgbmdmhdelanoaih'
 
 request_chrome_extension 'Google Chrome Canary' 'chromeextensionsdeveloper' 'ohmmkhmmmpcnpikjeljgnaoabkaalbgc'
 request_chrome_extension 'Google Chrome Canary' 'daydream' 'oajnmbophdhdobfpalhkfgahchpcoali'
