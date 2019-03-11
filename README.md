@@ -6,7 +6,7 @@ bash -c "$(curl -fsSL 'https://raw.github.com/vitorgalvao/dotfiles/master/instal
 ```
 
 ### Organisation
-Although this repo’s name is `dotfiles`, it doesn’t contain any. A separate app handles backup and restoration of those. This repo consists of a series of commands and files to automate setting up a new machine.
+This repo’s may be named `dotfiles` but it doesn’t contain any. A separate app handles backup and restoration of those. These are a series of modular scripts that intend to be useful beyond setting up a new machine.
 
 Everything is modular. The most important parts of the repo’s file structure are:
 
@@ -15,14 +15,13 @@ Everything is modular. The most important parts of the repo’s file structure a
 ├── install.sh
 ├── scripts
 └── files
-    └── post_install_script.sh
 ```
 
-`scripts` is a directory that contains various shell scripts. However, none of them will actually do anything if ran on their own: they consist of structured functions to perform various tasks. `files` contains configurations that must be applied manually, files to support the installation scripts, and a special `post_install_script.sh` to call after system setup. Finally, `install.sh` is what brings it all together in an automated fashion. It loads up all the script functions and runs them in sequence.
+`scripts` is a directory that contains shell scripts to be `source`d. None will do anything if ran on their own: they consist of structured functions to perform tasks. `files` contains configurations to be applied manually and files to support the installation scripts. Finally, `install.sh` is what brings it all together in an automated fashion. It’s the only script that should be run directly.
 
-All the script functions are organised in logical sequence. Operations range from support to the installation as a whole (asking for details beforehand for future functions, moving `files` to a more visible location) to useful on their own. The latter is where the modularity shines.
+Script functions are organised in logical sequence. Operations range from support, to the installation as a whole, to useful on their own. The latter is where the modularity shines.
 
-If, say, we wish to [repeat the python setup process](https://github.com/vitorgalvao/dotfiles/blob/c353f8019e77b00ca9e3f26a18a5bb421e524b93/scripts/01_environments.sh#L6), [update homebrew head apps](https://github.com/vitorgalvao/dotfiles/blob/c353f8019e77b00ca9e3f26a18a5bb421e524b93/scripts/02_apps.sh#L20), or [reset default apps in a particular manner](https://github.com/vitorgalvao/dotfiles/blob/c353f8019e77b00ca9e3f26a18a5bb421e524b93/scripts/03_configs.sh#L5), we need only source the appropriate scripts and run the respective functions.
+If, say, we wish to [repeat the python setup process](https://github.com/vitorgalvao/dotfiles/blob/c9129b1dd70032c79df958985b854834ea2d62bf/scripts/environments.sh#L13), or [reset default apps in a particular manner](https://github.com/vitorgalvao/dotfiles/blob/c9129b1dd70032c79df958985b854834ea2d62bf/scripts/configure_tools.sh#L22), we need only source the appropriate scripts (don’t forget [the helpers](https://github.com/vitorgalvao/dotfiles/blob/master/scripts/helper_functions.sh)) and run the respective functions. Functions are built such that running them more than once should have no adverse effects.
 
 This allows for a flexible arrangement where we need only make sure the functions are up to date. Those we want to run outside the system setup can be built around the scripts, loading and executing the appropriate commands.
 

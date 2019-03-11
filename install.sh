@@ -1,48 +1,77 @@
-run_install_dotfiles() {
-  curl --progress-bar --location 'https://github.com/vitorgalvao/dotfiles/archive/master.zip' | ditto -xk - '/tmp'
+#!/bin/bash
 
-  # source all shell scripts
-  for shell_script in '/tmp/dotfiles-master/scripts/'*.sh; do
-    source "${shell_script}"
-  done
+export PATH="/usr/local/bin:${PATH}"
+caffeinate & # Prevent computer from going to sleep
 
+tmp_dir="$(mktemp -d)"
+curl --location 'https://github.com/vitorgalvao/dotfiles/archive/master.zip' | ditto -xk - "${tmp_dir}"
+
+for shell_script in "${tmp_dir}/dotfiles-master/scripts/"*.sh; do
+  source "${shell_script}"
+done
+
+function show_options {
   clear
 
-  initial_setup
-  ask_details
-  sync_icloud
-  update_system
+  echo "
+    What do you want to do next?
 
-  install_brew
-  install_python
-  install_ruby
-  install_node
+    [1] Update the system.
+    [2] Configure macOS.
+    [3] Setup language environments.
+    [4] Install apps.
+    [5] Configure tools.
+    [0] Quit.
+  " | sed -E 's/ {4}//'
 
-  install_brew_apps
-  install_cask_apps
-  install_tinyscripts
-  install_mas_apps
+  read -n1 -rp 'Pick a number: ' option
+  clear
 
-  restore_settings
-  set_default_apps
-  set_keyboard_shortcuts
-  install_commercial_fonts
-  configure_zsh
-  install_nvim_packages
-  install_atom_packages
-  configure_git
-  configure_massren
-  configure_pinboard_scripts
-  install_launchagents
-  lower_startup_chime
+  if [[ "${option}" -eq 1 ]]; then
+    sync_icloud
+    mas_login
+    update_system
+  elif [[ "${option}" -eq 2 ]]; then
+    configure_macos_auto
+    configure_macos_manual
+    set_lock_screen_message
+    lower_startup_chime
+    install_commercial_fonts
+    install_launch_agents "${tmp_dir}/dotfiles-master/files/launchd_plists"
+  elif [[ "${option}" -eq 3 ]]; then
+    install_brew
+    install_python
+    install_ruby
+    install_node
+  elif [[ "${option}" -eq 4 ]]; then
+    install_brew_apps
+    install_cask_apps
+    install_mas_apps
+  elif [[ "${option}" -eq 5 ]]; then
+    restore_settings
+    set_keyboard_shortcuts
+    set_default_apps
+    configure_zsh
+    configure_git
+    install_editor_packages
+    configure_pinboard_scripts
+    install_chromium_extensions
+  elif [[ "${option}" -eq 0 ]]; then
+    # Let computer go to sleep again
+    # Using the `pid` and `wait` with redirection prevents the `Terminated` message
+    local caffeinate_pid="$(pgrep caffeinate)"
+    kill "${caffeinate_pid}"
+    wait "${caffeinate_pid}" 2>/dev/null
 
-  cleanup_brew
-  cleanup_error_log
-  move_manual_action_files
-  killall caffeinate # computer can go back to sleep
-  final_message
+    sudo --remove-timestamp
+
+    return 0
+  else
+    echo 'Not a valid option. Try again.' >&2
+  fi
+
+  show_options
 }
 
-# run and log errors to file (but still show them when they happen)
-readonly error_log="${HOME}/Desktop/install_errors.log"
-run_install_dotfiles 2> >(tee "${error_log}")
+renew_sudo
+show_options
