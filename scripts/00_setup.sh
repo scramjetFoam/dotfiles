@@ -9,7 +9,6 @@ renew_sudo() { # helper function for when the following command needs `sudo` act
 initial_setup() {
   export PATH="/usr/local/bin:${PATH}"
 
-  trap 'exit 0' SIGINT # exit cleanly if aborted with ⌃C
   caffeinate & # prevent computer from going to sleep
 
   # variables for helper files and directories
