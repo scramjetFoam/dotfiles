@@ -148,7 +148,6 @@ function configure_pinboard_scripts {
 
 function install_chromium_extensions {
   ask_chromium 'Google Chrome' '1Password extension' 'aomjjhallfgjeglblehebfpbcfeobpgk'
-  ask_chromium 'Google Chrome' 'HTTPS Everywhere' 'gcbommkclmclpchllfjekcdonpmejbdp'
   ask_chromium 'Google Chrome' 'uBlock Origin' 'cjpalhdlnbpafiamejdnhcphjbkeiagm'
   ask_chromium 'Google Chrome' 'Unsplash Instant' 'pejkokffkapolfffcgbmdmhdelanoaih'
 
