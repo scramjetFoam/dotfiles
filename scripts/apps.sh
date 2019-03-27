@@ -9,7 +9,7 @@ function install_brew_apps {
   brew install vitorgalvao/kepubify/kepubify
 
   brew tap vitorgalvao/tiny-scripts
-  brew install cask-analytics cask-repair climergebutton contagem-edp gfv human-media-time labelcolor lossless-compress lovecolor macspoof pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file workflows-renamer
+  brew install alfred-workflows-renamer cask-analytics cask-repair climergebutton contagem-edp gfv human-media-time labelcolor lossless-compress lovecolor macspoof pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
 }
 
 function install_cask_apps {
