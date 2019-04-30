@@ -72,9 +72,6 @@ function configure_macos_auto {
   # Top right screen corner → Notification Center
   defaults write com.apple.dock wvous-tr-corner -int 12
 
-  info 'Don not automatically rearrange Spaces based on most recent use'
-  defaults write com.apple.dock mru-spaces -bool false
-
   info 'Make Dock icons of hidden applications translucent'
   defaults write com.apple.dock showhidden -bool true
 
