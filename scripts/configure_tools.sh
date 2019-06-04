@@ -75,20 +75,6 @@ function set_default_apps {
   for ext in {afphoto,psd}; do duti -s "${afp_latest}" "${ext}" all; done
 }
 
-function configure_zsh {
-  local recent_zsh='/usr/local/bin/zsh'
-  renew_sudo
-  info 'Making ZSH the default shell.'
-
-  if [[ "${SHELL}" == "${recent_zsh}" ]]; then
-    echo 'It was already done.'
-    return 0
-  fi
-
-  sudo sh -c "echo '${recent_zsh}' >> /etc/shells"
-  sudo chsh -s "${recent_zsh}" "${USER}"
-}
-
 function configure_git {
   local full_name github_email github_username github_password github_token
   ask 'Give details to configure git:'

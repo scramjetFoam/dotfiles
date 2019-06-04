@@ -51,7 +51,6 @@ function show_options {
     restore_settings
     set_keyboard_shortcuts
     set_default_apps
-    configure_zsh
     configure_git
     install_editor_packages
     configure_pinboard_scripts
