@@ -19,6 +19,7 @@ function message {
 
 # Ask for info to be given in the Terminal
 function ask {
+  (afplay /System/Library/Sounds/Hero.aiff &) # Run in subshell so we do not see job information; send to the background so it does not hold up execution while playing
   message 'magenta' "${1}"
 }
 
