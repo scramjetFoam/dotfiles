@@ -154,20 +154,12 @@ function install_launch_agents {
   local global_launchdaemons_dir='/Library/LaunchDaemons/'
   [[ -d "${user_launchagents_dir}" ]] || mkdir -p "${user_launchagents_dir}"
 
-  for plist_file in "${plists_dir}/user_plists"/*; do
-    local plist_name="$(basename "${plist_file}")"
+  cp "${plists_dir}/user_plists"/* "${user_launchagents_dir}"
+  chmod 644 "${user_launchagents_dir}"/*
+  launchctl bootstrap "gui/$(id -u "${USER}")" "${user_launchagents_dir}"
 
-    cp "${plist_file}" "${user_launchagents_dir}"
-    chmod 644 "${user_launchagents_dir}/${plist_name}"
-    launchctl load -w "${user_launchagents_dir}/${plist_name}"
-  done
-
-  for plist_file in "${plists_dir}/global_plists"/*; do
-    local plist_name="$(basename "${plist_file}")"
-
-    sudo cp "${plist_file}" "${global_launchdaemons_dir}"
-    sudo chmod 644 "${global_launchdaemons_dir}/${plist_name}"
-    sudo chown root "${global_launchdaemons_dir}/${plist_name}"
-    sudo launchctl load -w "${global_launchdaemons_dir}/${plist_name}"
-  done
+  sudo cp "${plists_dir}/global_plists"/* "${global_launchdaemons_dir}"
+  sudo chmod 644 "${global_launchdaemons_dir}"/*
+  sudo chown root "${global_launchdaemons_dir}"/*
+  sudo launchctl bootstrap 'system' "${global_launchdaemons_dir}"
 }
