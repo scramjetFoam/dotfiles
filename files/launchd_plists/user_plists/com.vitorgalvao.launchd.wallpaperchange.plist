@@ -15,8 +15,8 @@ const wallpaperDir = systemEvents.currentDesktop.picturesFolder()
 const wallpaperPaths = systemEvents.folders.byName(wallpaperDir).diskItems().map(p =&gt; p.toString())
 const wallpaperRandom = wallpaperPaths[Math.floor(Math.random() * wallpaperPaths.length)]
 systemEvents.currentDesktop.picture = wallpaperRandom</string>
-        </array>
-        <key>StartCalendarInterval</key>
+	</array>
+	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
 			<key>Hour</key>
@@ -165,4 +165,3 @@ systemEvents.currentDesktop.picture = wallpaperRandom</string>
 	</array>
 </dict>
 </plist>
-
