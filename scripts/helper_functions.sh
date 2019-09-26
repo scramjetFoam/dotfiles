@@ -33,7 +33,7 @@ function ask_gui {
   open -Wa "${app}" --args "${@}" # Do not continue until app closes
 }
 
-# Open `System Preferences` is specified pane
+# Open `System Preferences` in specified pane
 function ask_system_preferences {
   local message="${1}"
   local pane="${2}"
