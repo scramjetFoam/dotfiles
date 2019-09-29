@@ -1,6 +1,6 @@
 function install_brew_apps {
   info 'Installing Homebrew packages.'
-  brew install aria2 cpulimit duti exiftool ffmpeg geckodriver gifski git handbrake haskell-stack hr imagemagick jq mas massren media-info megatools mkvtoolnix mp4v2 mpv neovim pup ripgrep rmlint shellcheck sox svgcleaner trash tree youtube-dl z
+  brew install aria2 cpulimit duti exiftool ffmpeg geckodriver gifski git handbrake haskell-stack hr imagemagick jq mas massren media-info megatools mkvtoolnix mp4v2 neovim pup ripgrep rmlint shellcheck sox svgcleaner trash tree youtube-dl z
 
   info 'Installing Homebrew ZSH plugins.'
   brew install zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
@@ -16,7 +16,7 @@ function install_cask_apps {
   renew_sudo
   info 'Installing casks.'
 
-  brew cask install alfred apple-events atom bartender bettertouchtool dolphin dropbox electron-api-demos firefox fog gitup google-chrome imageoptim imitone iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam transmission visual-studio-code vmware-fusion wwdc yacreader
+  brew cask install alfred apple-events atom bartender bettertouchtool dolphin dropbox electron-api-demos firefox fog gitup google-chrome imageoptim imitone iterm2 keka mpv phoenix processing protonvpn safari-technology-preview shotcut steam transmission visual-studio-code vmware-fusion wwdc yacreader
 
   renew_sudo
   info 'Installing cask versions.'
