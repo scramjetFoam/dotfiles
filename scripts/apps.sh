@@ -40,7 +40,7 @@ function install_cask_apps {
   # Sans
   brew cask install font-aileron font-exo2 font-montserrat font-lato font-open-sans font-open-sans-condensed font-signika
   # Serif
-  brew cask install font-abril-fatface font-butler font-gentium-book-basic font-playfair-display font-playfair-display-sc
+  brew cask install font-abril-fatface font-gentium-book-basic font-playfair-display font-playfair-display-sc
   # Slab
   brew cask install font-bitter font-kreon
 }
