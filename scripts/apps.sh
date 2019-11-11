@@ -8,13 +8,14 @@ function install_brew_apps {
   info 'Installing from Homebrew third-party taps.'
   brew tap vitorgalvao/tiny-scripts
   brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-sharedresources alfred-workflow-update alfred-workflows-renamer cask-analytics cask-repair climergebutton contagem-edp gfv human-media-time labelcolor lossless-compress lovecolor macspoof makeicns pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
+  brew install --HEAD vitorgalvao/mpv/mpv
 }
 
 function install_cask_apps {
   renew_sudo
   info 'Installing casks.'
 
-  brew cask install alfred apple-events atom bartender bettertouchtool dolphin dropbox electron-api-demos firefox fog gitup google-chrome imageoptim imitone iterm2 keka mpv phoenix processing protonvpn safari-technology-preview shotcut steam transmission visual-studio-code vmware-fusion wwdc yacreader
+  brew cask install alfred apple-events atom bartender bettertouchtool dolphin dropbox electron-api-demos firefox fog gitup google-chrome imageoptim imitone iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam transmission visual-studio-code vmware-fusion wwdc yacreader
 
   renew_sudo
   info 'Installing cask versions.'
