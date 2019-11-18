@@ -15,7 +15,7 @@ function install_cask_apps {
   renew_sudo
   info 'Installing casks.'
 
-  brew cask install alfred apple-events atom bartender bettertouchtool dolphin dropbox electron-api-demos firefox fog gitup google-chrome imageoptim imitone iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam transmission visual-studio-code vmware-fusion wwdc yacreader
+  brew cask install alfred apple-events atom bartender bettertouchtool dolphin dropbox firefox fog gitup google-chrome imageoptim imitone iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam transmission visual-studio-code vmware-fusion wwdc yacreader
 
   renew_sudo
   info 'Installing cask versions.'
