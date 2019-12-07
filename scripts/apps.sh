@@ -1,6 +1,6 @@
 function install_brew_apps {
   info 'Installing Homebrew packages.'
-  brew install aria2 cpulimit duti exiftool ffmpeg geckodriver gifski git handbrake haskell-stack hr imagemagick jq kepubify mas massren media-info megatools mkvtoolnix mp4v2 neovim pup ripgrep rmlint shellcheck sox svgcleaner trash tree youtube-dl z
+  brew install aria2 cpulimit duti exiftool ffmpeg geckodriver gifski git handbrake haskell-stack hr imagemagick jq kepubify mas massren media-info megatools mkvtoolnix mp4v2 neovim pup ripgrep rmlint shellcheck source-highlight sox svgcleaner trash tree youtube-dl z
 
   info 'Installing Homebrew ZSH plugins.'
   brew install zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
