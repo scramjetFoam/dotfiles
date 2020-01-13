@@ -7,7 +7,7 @@ function install_brew_apps {
 
   info 'Installing from Homebrew third-party taps.'
   brew tap vitorgalvao/tiny-scripts
-  brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-sharedresources alfred-workflow-update alfred-workflows-renamer cask-analytics cask-repair climergebutton contagem-edp gfv human-media-time labelcolor lossless-compress lovecolor macspoof makeicns pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
+  brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-sharedresources alfred-workflow-update alfred-workflows-renamer cask-analytics cask-repair climergebutton contagem-edp extract-app-icon gfv human-media-time labelcolor lossless-compress lovecolor macspoof makeicns pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
   brew install --HEAD vitorgalvao/mpv/mpv
 }
 
