@@ -27,21 +27,10 @@ function set_keyboard_shortcuts {
 
 function set_default_apps {
   info 'Setting default apps.'
-  # mpv
-  local mpv_bundle_id='io.mpv'
-  local mpv_from_spotlight="$(mdfind kMDItemCFBundleIdentifier = "${mpv_bundle_id}")"
 
-  if [[ -n "${mpv_from_spotlight}" ]]; then
-    local mpv_location="${mpv_from_spotlight}"
-  else
-    local mpv_location="$(find "$(brew --prefix)" -type d -name 'mpv.app' | tail -1)"
-
-    if ! pgrep -f "${mpv_location}"; then
-      info 'Opening and closing mpv so the system is aware of it (since it is not in a standard location).'
-      open "${mpv_location}"
-      sleep 2
-      killall mpv
-    fi
+  # Make Spotlight aware of mpv
+  if [[ -z "$(mdfind kMDItemCFBundleIdentifier = 'io.mpv')" ]]; then
+    mdimport -i "$(find "$(brew --prefix)" -type d -name 'mpv.app' | tail -1)"
   fi
 
   # General extensions
