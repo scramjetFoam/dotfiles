@@ -21,7 +21,7 @@ function install_python {
   eval "$(pyenv init -)" # Activate pyenv
 
   # Install some eggs
-  pip install instapy-cli neovim subliminal
+  pip install neovim
 }
 
 function install_ruby {
@@ -35,7 +35,7 @@ function install_ruby {
   chruby ruby # Switch to latest installed ruby
 
   # Install some gems
-  gem install --no-document neovim nokogiri pry redcarpet ronn rubocop video_transcoding watir
+  gem install --no-document neovim nokogiri ronn rubocop video_transcoding watir
 }
 
 function install_node {
@@ -52,5 +52,5 @@ function install_node {
   nvm install node # Install latest node
 
   # Install some packages
-  npm install --global eslint eslint-plugin-immutable eslint-plugin-shopify jsonlint neovim nightmare prettier
+  npm install --global neovim
 }
