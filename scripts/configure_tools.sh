@@ -65,20 +65,12 @@ function set_default_apps {
 }
 
 function configure_git {
-  local full_name github_email github_username github_password github_token
-  ask 'Give details to configure git:'
-  read -rp 'First and last names: ' full_name
-  read -rp 'GitHub email: ' github_email
+  local github_username github_password github_token
+  ask 'Request a GitHub token for CLI use.'
   read -rp 'GitHub username: ' github_username
-  read -rsp "GitHub password (never stored): " github_password
+  read -rsp 'GitHub password (never stored): ' github_password
   echo
 
-  git config --global user.name "${full_name}"
-  git config --global github.user "${github_username}"
-  git config --global user.email "${github_email}"
-  git config --global credential.helper osxkeychain
-
-  ask 'Request a GitHub token for CLI use.'
   local request=(curl --silent 'https://api.github.com/authorizations' --user "${github_username}:${github_password}" --data "{\"scopes\":[\"repo\"],\"note\":\"macOS CLI for ${USER} on $(scutil --get LocalHostName)\"}")
 
   local response="$("${request[@]}")"
