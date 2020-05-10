@@ -35,7 +35,7 @@ function install_ruby {
   chruby ruby # Switch to latest installed ruby
 
   # Install some gems
-  gem install --no-document neovim nokogiri ronn rubocop video_transcoding watir
+  gem install --no-document neovim nokogiri other_video_transcoding ronn rubocop watir
 }
 
 function install_node {
