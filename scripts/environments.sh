@@ -30,7 +30,10 @@ function install_ruby {
   rm -rf "${HOME}"/.{gem,rubies} # Get rid of previous install, if any
   brew install chruby ruby-install
 
-  ruby-install --src-dir "$(mktemp -d)" ruby # Install latest stable ruby
+  local -r tmp_dir="$(mktemp -d)"
+  ruby-install --src-dir "${tmp_dir}" ruby # Install latest stable ruby
+  rm ~rf "${tmp_dir}"
+
   source '/usr/local/opt/chruby/share/chruby/chruby.sh' # Activate chruby
   chruby ruby # Switch to latest installed ruby
 
