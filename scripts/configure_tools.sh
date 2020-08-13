@@ -18,6 +18,17 @@ function set_keyboard_shortcuts {
     "Edit Card"="@E";
   }'
 
+  # Safari
+  defaults write com.apple.Safari NSUserKeyEquivalents '{
+    "Show Previous Tab"="@~\Uf702";
+    "Show Next Tab"="@~\Uf703";
+  }'
+
+  defaults write com.apple.SafariTechnologyPreview NSUserKeyEquivalents '{
+    "Show Previous Tab"="@~\Uf702";
+    "Show Next Tab"="@~\Uf703";
+  }'
+
   # ScreenFlow 5
   defaults write net.telestream.screenflow5 NSUserKeyEquivalents '{
     "Add Screen Recording Action"="~r";
