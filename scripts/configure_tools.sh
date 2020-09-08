@@ -103,6 +103,8 @@ function configure_git {
 
   ask 'Request a GitHub token for `cli-accept-button`.'
   cli-accept-button --ensure-token
+  ask 'Request a GitHub token for `cli-merge-button`.'
+  cli-merge-button --ensure-token
 }
 
 function install_editor_packages {
