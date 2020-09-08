@@ -101,8 +101,8 @@ function configure_git {
   info 'Storing GitHub token in Keychain.'
   git credential-osxkeychain store <<< "$(echo -e "host=github.com\nprotocol=https\nusername=${github_username}\npassword=${github_token}")"
 
-  ask 'Request a GitHub token for `climergebutton`.'
-  climergebutton --ensure-token
+  ask 'Request a GitHub token for `cli-accept-button`.'
+  cli-accept-button --ensure-token
 }
 
 function install_editor_packages {
