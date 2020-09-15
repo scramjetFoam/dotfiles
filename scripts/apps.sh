@@ -6,6 +6,8 @@ function install_brew_apps {
   brew install zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
 
   info 'Installing from Homebrew third-party taps.'
+  brew install smudge/smudge/nightlight
+
   brew tap vitorgalvao/tiny-scripts
   brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-helpers alfred-workflow-update alfred-workflows-renamer app-icon-extract cask-analytics cask-repair cli-approve-button cli-merge-button gfv human-media-time labelcolor lossless-compress lovecolor macspoof makeicns mtg-wallpapers pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
   brew install --HEAD vitorgalvao/mpv/mpv
