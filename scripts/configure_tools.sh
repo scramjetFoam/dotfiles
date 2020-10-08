@@ -45,7 +45,7 @@ function set_default_apps {
   fi
 
   # General extensions
-  for ext in {aac,avi,f4v,flac,m4a,m4b,mkv,mov,mp3,mp4,mpeg,mpg,part,wav,webm}; do duti -s io.mpv "${ext}" all; done # Media
+  for ext in {aac,avi,f4v,flac,m4a,m4b,mkv,mov,mp3,mp4,mpeg,mpg,ogg,part,wav,webm}; do duti -s io.mpv "${ext}" all; done # Media
   for ext in {7z,bz2,gz,rar,tar,tbz,tgz,zip}; do duti -s com.aone.keka "${ext}" all; done # Archives
   for ext in {cbr,cbz}; do duti -s com.richie.YACReader "${ext}" all; done # Image archives
   for ext in {md,txt}; do duti -s pro.writer.mac "${ext}" all; done # Text
