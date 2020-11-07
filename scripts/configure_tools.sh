@@ -1,4 +1,5 @@
 #!/bin/bash
+
 function restore_settings {
   info 'Restoring app settings.'
   ruby "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Tape/tape" restore
@@ -16,6 +17,11 @@ function set_keyboard_shortcuts {
   # Contacts
   defaults write com.apple.AddressBook NSUerKeyEquivalents '{
     "Edit Card"="@E";
+  }'
+
+  # Reeder
+  defaults write com.readerapp.macOS NSUserKeyEquivalents '{
+    "Close Window"="@w";
   }'
 
   # Safari
