@@ -58,37 +58,18 @@ function set_default_apps {
   for ext in {css,js,json,php,pug,py,rb,sh}; do duti -s com.microsoft.VSCode "${ext}" all; done # Code
 
   # Affinity apps (use beta versions when possible)
-  # Whenever a stable is more recent than the beta, the beta cannot be used, so we need to detect which is latest and always use that
-  local afd_id='com.seriflabs.affinitydesigner'
-  local afp_id='com.seriflabs.affinityphoto'
-  local afdbeta_id='com.seriflabs.affinitydesigner.beta'
-  local afpbeta_id='com.seriflabs.affinityphoto.beta'
-
-  local afd_location="$(mdfind kMDItemCFBundleIdentifier = "${afd_id}")"
-  local afp_location="$(mdfind kMDItemCFBundleIdentifier = "${afp_id}")"
-  local afdbeta_location="$(mdfind kMDItemCFBundleIdentifier = "${afdbeta_id}")"
-  local afpbeta_location="$(mdfind kMDItemCFBundleIdentifier = "${afpbeta_id}")"
-
-  local afd_version="$(mdls -raw -name kMDItemVersion "${afd_location}")"
-  local afp_version="$(mdls -raw -name kMDItemVersion "${afp_location}")"
-  local afdbeta_version="$(mdls -raw -name kMDItemVersion "${afdbeta_location}" | sed -E 's/ \(.*//')"
-  local afpbeta_version="$(mdls -raw -name kMDItemVersion "${afpbeta_location}" | sed -E 's/ \(.*//')"
-
-  [[ "${afd_version}" == "${afdbeta_version}" ]] && local afd_latest="${afd_id}" || local afd_latest="${afdbeta_id}"
-  [[ "${afp_version}" == "${afpbeta_version}" ]] && local afp_latest="${afp_id}" || local afp_latest="${afpbeta_id}"
-
-  for ext in {afdesign,eps}; do duti -s "${afd_latest}" "${ext}" all; done
-  for ext in {afphoto,psd}; do duti -s "${afp_latest}" "${ext}" all; done
+  for ext in {afdesign,eps}; do duti -s com.seriflabs.affinitydesigner "${ext}" all; done
+  for ext in {afphoto,psd}; do duti -s com.seriflabs.affinityphoto "${ext}" all; done
 }
 
 function configure_git {
-  local github_username github_password github_token
+  local github_username github_password
   ask 'Request a GitHub token for CLI use.'
   read -rp 'GitHub username: ' github_username
   read -rsp 'GitHub password (never stored): ' github_password
   echo
 
-  local request=(curl --silent 'https://api.github.com/authorizations' --user "${github_username}:${github_password}" --data "{\"scopes\":[\"repo\"],\"note\":\"macOS CLI for ${USER} on $(scutil --get LocalHostName)\"}")
+  local -r request=(curl --silent 'https://api.github.com/authorizations' --user "${github_username}:${github_password}" --data "{\"scopes\":[\"repo\"],\"note\":\"macOS CLI for ${USER} on $(scutil --get LocalHostName)\"}")
 
   local response="$("${request[@]}")"
 
@@ -102,7 +83,7 @@ function configure_git {
     return
   fi
 
-  local github_token="$(grep 'token' <<< "${response}" | head -1 | cut -d'"' -f4)"
+  local -r github_token="$(grep 'token' <<< "${response}" | head -1 | cut -d'"' -f4)"
 
   info 'Storing GitHub token in Keychain.'
   git credential-osxkeychain store <<< "$(echo -e "host=github.com\nprotocol=https\nusername=${github_username}\npassword=${github_token}")"

@@ -135,7 +135,7 @@ function lower_startup_chime {
 }
 
 function install_commercial_fonts {
-  local tmp_fonts_dir="$(mktemp -d)"
+  local -r tmp_fonts_dir="$(mktemp -d)"
   info 'Installing commercial fonts.'
 
   for font_zip in "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Fonts/"*; do
@@ -149,9 +149,9 @@ function install_launch_agents {
   renew_sudo
   info 'Setting up launch daemons and agents.'
 
-  local plists_dir="${1}"
-  local user_launchagents_dir="${HOME}/Library/LaunchAgents"
-  local global_launchdaemons_dir='/Library/LaunchDaemons/'
+  local -r plists_dir="${1}"
+  local -r user_launchagents_dir="${HOME}/Library/LaunchAgents"
+  local -r global_launchdaemons_dir='/Library/LaunchDaemons/'
   [[ -d "${user_launchagents_dir}" ]] || mkdir -p "${user_launchagents_dir}"
 
   cp "${plists_dir}/user_plists"/* "${user_launchagents_dir}"

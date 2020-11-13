@@ -58,10 +58,7 @@ function show_options {
     install_alfred_workflow_launch_agents
   elif [[ "${option}" -eq 0 ]]; then
     # Let computer go to sleep again
-    # Using the `pid` and `wait` with redirection prevents the `Terminated` message
-    local caffeinate_pid="$(pgrep caffeinate)"
-    kill "${caffeinate_pid}"
-    wait "${caffeinate_pid}" 2>/dev/null
+    killall 'caffeinate'
 
     sudo --remove-timestamp
 

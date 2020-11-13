@@ -1,7 +1,7 @@
 function message {
-  local bullet_color="${1}"
-  local message="${2}"
-  local all_colors=('black' 'red' 'green' 'yellow' 'blue' 'magenta' 'cyan' 'white')
+  local -r bullet_color="${1}"
+  local -r message="${2}"
+  local -r all_colors=('black' 'red' 'green' 'yellow' 'blue' 'magenta' 'cyan' 'white')
 
   for i in "${!all_colors[@]}"; do
     if [[ "${all_colors[${i}]}" == "${bullet_color}" ]]; then
@@ -25,8 +25,8 @@ function ask {
 
 # Ask for a manual GUI action to be done
 function ask_gui {
-  local message="${1}"
-  local app="${2}"
+  local -r message="${1}"
+  local -r app="${2}"
   shift 2
 
   ask "${message}"
@@ -35,9 +35,9 @@ function ask_gui {
 
 # Open `System Preferences` in specified pane
 function ask_system_preferences {
-  local message="${1}"
-  local pane="${2}"
-  local tab="${3}" # Optionally specify a tab in the pane
+  local -r message="${1}"
+  local -r pane="${2}"
+  local -r tab="${3}" # Optionally specify a tab in the pane
 
   if [[ -z "${tab}" ]]; then
     osascript -e "tell application \"System Preferences\" to reveal pane \"${pane}\"" 1>/dev/null
@@ -49,9 +49,9 @@ function ask_system_preferences {
 }
 
 function ask_chromium {
-  local chromium_app="${1}"
-  local extension_name="${2}"
-  local extension_code="${3}"
+  local -r chromium_app="${1}"
+  local -r extension_name="${2}"
+  local -r extension_code="${3}"
 
   ask_gui "Install '${extension_name}' extension." "${chromium_app}" --no-first-run "https://chrome.google.com/webstore/detail/${extension_code}"
 }
