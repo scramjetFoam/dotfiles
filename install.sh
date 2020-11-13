@@ -55,6 +55,7 @@ function show_options {
     install_editor_packages
     configure_pinboard_scripts
     install_chromium_extensions
+    install_alfred_workflow_launch_agents
   elif [[ "${option}" -eq 0 ]]; then
     # Let computer go to sleep again
     # Using the `pid` and `wait` with redirection prevents the `Terminated` message

@@ -139,3 +139,11 @@ function install_chromium_extensions {
 
   ask_gui 'Remove Google-imposed extensions.' 'Google Chrome'
 }
+
+function install_alfred_workflow_launch_agents {
+  info 'Setting up Alfred Workflow launch agents.'
+
+  /usr/bin/osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "downmediaservicesinstall" in workflow "com.vitorgalvao.alfred.downmedia" with argument "install"'
+  /usr/bin/osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "pinpluslaunchdinstall" in workflow "com.vitorgalvao.alfred.pinplus" with argument "install"'
+  /usr/bin/osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "shortfilmslaunchdinstall" in workflow "com.vitorgalvao.alfred.shortfilms" with argument "install"'
+}
