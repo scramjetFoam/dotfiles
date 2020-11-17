@@ -14,27 +14,20 @@ function install_brew_apps {
 }
 
 function install_cask_apps {
-  local -r casks_main=(alfred apple-events atom bartender bettertouchtool dolphin dropbox firefox fog gitup google-chrome imageoptim imitone iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam terminology transmission visual-studio-code vmware-fusion wwdc yacreader)
-  local -r casks_versions=(affinity-designer-beta affinity-photo-beta screenflow5)
-  local -r casks_drivers=(xbox360-controller-driver-unofficial)
-
   renew_sudo
   info 'Installing casks.'
-  for cask in "${casks_main[@]}"; do
-    brew install "homebrew/cask/${cask}"
-  done
+
+  brew install --cask alfred apple-events atom bartender bettertouchtool dolphin dropbox firefox fog gitup google-chrome imageoptim imitone iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam terminology transmission visual-studio-code vmware-fusion wwdc yacreader
 
   renew_sudo
   info 'Installing cask versions.'
-  for cask in "${casks_versions[@]}"; do
-    brew install "homebrew/cask-versions/${cask}"
-  done
+  brew tap homebrew/cask-versions
+  brew install --cask affinity-designer-beta affinity-photo-beta screenflow5
 
   renew_sudo
   info 'Installing drivers.'
-  for cask in "${casks_drivers[@]}"; do
-    brew install "homebrew/cask-drivers/${cask}"
-  done
+  brew tap homebrew/cask-drivers
+  brew install --cask xbox360-controller-driver-unofficial
 
   info 'Installing prefpanes, qlplugins, colorpickers'
   # Nothing here
@@ -42,17 +35,17 @@ function install_cask_apps {
   info 'Installing fonts.'
   brew tap homebrew/cask-fonts
   # Multiple
-  brew install font-alegreya font-alegreya-sans
-  brew install font-fira-mono font-fira-sans
-  brew install font-merriweather font-merriweather-sans
-  brew install font-pt-mono font-pt-sans font-pt-serif
-  brew install font-source-code-pro font-source-sans-pro font-source-serif-pro
-  # San
-  brew install font-aileron font-cozette font-exo2 font-montserrat font-lato font-open-sans font-open-sans-condensed font-signika
-  # Ser
-  brew install font-abril-fatface font-gentium-book-basic font-playfair-display font-playfair-display-sc
-  # Sla
-  brew install font-bitter font-kreon
+  brew install --cask font-alegreya font-alegreya-sans
+  brew install --cask font-fira-mono font-fira-sans
+  brew install --cask font-merriweather font-merriweather-sans
+  brew install --cask font-pt-mono font-pt-sans font-pt-serif
+  brew install --cask font-source-code-pro font-source-sans-pro font-source-serif-pro
+  # Sans
+  brew install --cask font-aileron font-cozette font-exo2 font-montserrat font-lato font-open-sans font-open-sans-condensed font-signika
+  # Serif
+  brew install --cask font-abril-fatface font-gentium-book-basic font-playfair-display font-playfair-display-sc
+  # Slab
+  brew install --cask font-bitter font-kreon
 }
 
 function install_mas_apps {
