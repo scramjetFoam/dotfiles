@@ -51,7 +51,7 @@ function install_cask_apps {
 function install_mas_apps {
   info 'Installing Mac App Store apps.'
 
-  local -r mas_apps=('1password=443987910' 'affinity-designer=824171161' 'affinity-photo=824183456' 'boop=1518425043' 'clear=504544917' 'dropshelf=540404405' 'glance=1513574319' 'haskell=841285201' 'ia-writer=775737590' 'quiver=866773894' 'reeder=880001334' 'spark=1176895641' 'trello=1278508951' 'tweetbot=557168941' 'tyme=1063996724' 'wipr=1320666476' 'xcode=497799835')
+  local -r mas_apps=('1password=443987910' 'affinity-designer=824171161' 'affinity-photo=824183456' 'boop=1518425043' 'clear=504544917' 'dropshelf=540404405' 'glance=1513574319' 'haskell=841285201' 'ia-writer=775737590' 'quiver=866773894' 'reeder=880001334' 'spark=1176895641' 'trello=1278508951' 'tweetbot=1384080005' 'tyme=1063996724' 'wipr=1320666476' 'xcode=497799835')
 
   local app_id
 
