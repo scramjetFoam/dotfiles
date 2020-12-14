@@ -1,6 +1,6 @@
 function install_brew_apps {
   info 'Installing Homebrew packages.'
-  brew install aria2 cpulimit duti exiftool ffmpeg geckodriver gifski git handbrake haskell-stack hr imagemagick jq kepubify mas massren media-info megatools mkvtoolnix mp4v2 neovim pup ripgrep rmlint shellcheck source-highlight sox svgcleaner trash tree youtube-dl z
+  brew install aria2 cpulimit duti exiftool ffmpeg gifski git handbrake hr imagemagick jq kepubify mas massren media-info megatools mkvtoolnix mp4v2 neovim ripgrep rmlint shellcheck trash tree youtube-dl z
 
   info 'Installing Homebrew ZSH plugins.'
   brew install zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
@@ -9,7 +9,7 @@ function install_brew_apps {
   brew install smudge/smudge/nightlight
 
   brew tap vitorgalvao/tiny-scripts
-  brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-helpers alfred-workflow-update alfred-workflows-renamer app-icon-extract cask-analytics cask-repair cli-approve-button cli-merge-button gfv human-media-time labelcolor lossless-compress lovecolor macspoof makeicns mtg-wallpapers pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
+  brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-helpers alfred-workflow-update alfred-workflows-renamer app-icon-extract cask-analytics cli-approve-button cli-merge-button gfv human-media-time labelcolor lossless-compress macspoof makeicns mtg-wallpapers pedir-gas pinboardbackup pinboardlinkcheck pinboardurlupdate pinboardwaybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
   brew install --HEAD vitorgalvao/mpv/mpv
 }
 
@@ -17,17 +17,16 @@ function install_cask_apps {
   renew_sudo
   info 'Installing casks.'
 
-  brew install --cask alfred apple-events atom bartender bettertouchtool dolphin dropbox firefox fog gitup google-chrome imageoptim imitone iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam terminology transmission visual-studio-code vmware-fusion wwdc yacreader
+  brew install --cask alfred bartender bettertouchtool dropbox gitup google-chrome iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam terminology transmission vmware-fusion yacreader
 
   renew_sudo
   info 'Installing cask versions.'
   brew tap homebrew/cask-versions
-  brew install --cask affinity-designer-beta affinity-photo-beta screenflow5
+  brew install --cask screenflow5
 
   renew_sudo
   info 'Installing drivers.'
-  brew tap homebrew/cask-drivers
-  brew install --cask xbox360-controller-driver-unofficial
+  # Nothing here
 
   info 'Installing prefpanes, qlplugins, colorpickers'
   # Nothing here
