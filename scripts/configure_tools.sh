@@ -63,31 +63,6 @@ function set_default_apps {
 }
 
 function configure_git {
-  local github_username github_password
-  ask 'Request a GitHub token for CLI use.'
-  read -rp 'GitHub username: ' github_username
-  read -rsp 'GitHub password (never stored): ' github_password
-  echo
-
-  local -r request=(curl --silent 'https://api.github.com/authorizations' --user "${github_username}:${github_password}" --data "{\"scopes\":[\"repo\"],\"note\":\"macOS CLI for ${USER} on $(scutil --get LocalHostName)\"}")
-
-  local response="$("${request[@]}")"
-
-  while grep --quiet 'Must specify two-factor authentication OTP code.' <<< "${response}"; do
-    read -rp '2FA code: ' otp
-    response="$("${request[@]}" --header "X-GitHub-OTP: ${otp}")"
-  done
-
-  if ! grep --quiet '"token"' <<< "${response}"; then
-    echo -e "\n${response}" >&2
-    return
-  fi
-
-  local -r github_token="$(grep 'token' <<< "${response}" | head -1 | cut -d'"' -f4)"
-
-  info 'Storing GitHub token in Keychain.'
-  git credential-osxkeychain store <<< "$(echo -e "host=github.com\nprotocol=https\nusername=${github_username}\npassword=${github_token}")"
-
   ask 'Request a GitHub token for `cli-approve-button`.'
   cli-approve-button --ensure-token
   ask 'Request a GitHub token for `cli-merge-button`.'
