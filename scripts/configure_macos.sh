@@ -93,7 +93,7 @@ function configure_macos_auto {
   osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
 
   info 'Set Dock size and screen edge.'
-  osascript -e 'tell application "System Events" to tell dock preferences to set properties to {dock size:0.17, screen edge:left}'
+  osascript -e 'tell application "System Events" to tell dock preferences to set properties to {dock size:0.3, screen edge:left}'
 }
 
 # Change macOS configurations that require manual intervention
