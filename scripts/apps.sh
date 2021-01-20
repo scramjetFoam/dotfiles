@@ -3,7 +3,7 @@ function install_brew_apps {
   brew install aria2 cpulimit duti exiftool ffmpeg gifski git handbrake hr imagemagick jq kepubify mas massren media-info megatools mkvtoolnix mp4v2 neovim ripgrep rmlint shellcheck trash tree youtube-dl z
 
   info 'Installing Homebrew ZSH plugins.'
-  brew install zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting
+  brew install zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
 
   info 'Installing from Homebrew third-party taps.'
   brew install smudge/smudge/nightlight
