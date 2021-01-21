@@ -33,6 +33,8 @@ function install_cask_apps {
 
   info 'Installing fonts.'
   brew tap homebrew/cask-fonts
+  # Subtitles, recommended in https://www.md-subs.com/saa-subtitle-font
+  brew install --cask font-clear-sans
   # Multiple
   brew install --cask font-alegreya font-alegreya-sans
   brew install --cask font-fira-mono font-fira-sans
