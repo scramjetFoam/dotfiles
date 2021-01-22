@@ -9,7 +9,7 @@ function install_brew_apps {
   brew install smudge/smudge/nightlight
 
   brew tap vitorgalvao/tiny-scripts
-  brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-helpers alfred-workflow-update alfred-workflows-renamer app-icon-extract cask-analytics cli-approve-button cli-merge-button gfv human-media-time labelcolor lossless-compress macspoof makeicns mtg-wallpapers pedir-gas pinboard-backup pinboard-link-check pinboard-url-update pinboard-waybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
+  brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-helpers alfred-workflow-update alfred-workflows-renamer app-icon-extract calm-notifications cask-analytics cli-approve-button cli-merge-button gfv human-media-time labelcolor lossless-compress macspoof makeicns mtg-wallpapers pedir-gas pinboard-backup pinboard-link-check pinboard-url-update pinboard-waybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
   brew install --HEAD vitorgalvao/mpv/mpv
 }
 
