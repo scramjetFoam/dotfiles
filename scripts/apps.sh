@@ -40,7 +40,7 @@ function install_cask_apps {
   brew install --cask font-fira-mono font-fira-sans
   brew install --cask font-merriweather font-merriweather-sans
   brew install --cask font-pt-mono font-pt-sans font-pt-serif
-  brew install --cask font-source-code-pro font-source-sans-pro font-source-serif-pro
+  brew install --cask font-source-code-pro font-source-sans-pro font-source-serif
   # Sans
   brew install --cask font-aileron font-cozette font-exo2 font-montserrat font-lato font-open-sans font-open-sans-condensed font-signika
   # Serif
