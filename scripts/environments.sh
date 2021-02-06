@@ -31,7 +31,7 @@ function install_ruby {
   brew install chruby ruby-install
 
   ruby-install --cleanup --src-dir "$(mktemp -d)" ruby # Install latest stable ruby
-  source '/usr/local/opt/chruby/share/chruby/chruby.sh' # Activate chruby
+  source "${HOMEBREW_PREFIX}/opt/chruby/share/chruby/chruby.sh" # Activate chruby
   chruby ruby # Switch to latest installed ruby
 
   # Install some gems
@@ -47,7 +47,7 @@ function install_node {
   # Activate nvm
   mkdir "${HOME}/.nvm"
   export NVM_DIR="${HOME}/.nvm"
-  [ -s '/usr/local/opt/nvm/nvm.sh' ] && source '/usr/local/opt/nvm/nvm.sh'
+  [ -s "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh" ] && source "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh"
 
   nvm install node # Install latest node
 

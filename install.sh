@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH="/usr/local/bin:${PATH}"
+export PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}"
 caffeinate & # Prevent computer from going to sleep
 
 tmp_dir="$(mktemp -d)"
