@@ -8,7 +8,7 @@
 	<array>
 		<string>/bin/bash</string>
 		<string>-c</string>
-		<string>curl 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts' --output /etc/hosts &amp;&amp; dscacheutil -flushcache &amp;&amp; killall -HUP mDNSResponder</string>
+		<string>curl 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts' --output /private/etc/hosts &amp;&amp; dscacheutil -flushcache &amp;&amp; killall -HUP mDNSResponder</string>
 	</array>
 		<key>RunAtLoad</key>
 		<true/>
