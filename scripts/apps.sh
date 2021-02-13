@@ -17,7 +17,7 @@ function install_cask_apps {
   renew_sudo
   info 'Installing casks.'
 
-  brew install --cask alfred bartender bettertouchtool dropbox epic-games gitup google-chrome iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam terminology transmission vmware-fusion yacreader
+  brew install --cask 1password alfred bartender bettertouchtool dropbox epic-games gitup google-chrome iterm2 keka phoenix processing protonvpn safari-technology-preview shotcut steam terminology transmission vmware-fusion yacreader
 
   renew_sudo
   info 'Installing cask versions.'
