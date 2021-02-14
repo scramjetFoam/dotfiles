@@ -11,7 +11,7 @@
 	</dict>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/bin/bash</string>
+		<string>/bin/zsh</string>
 		<string>-c</string>
 		<string>for script in &quot;${HOME}/Dropbox/Libraries/CleanupScripts/weekly/&quot;*; do &quot;${script}&quot;; done</string>
 	</array>
