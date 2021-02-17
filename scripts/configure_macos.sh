@@ -13,7 +13,7 @@ function configure_macos_auto {
 
   info 'Enable full keyboard access for all controls.'
   # (e.g. enable Tab in modal dialogs)
-  defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+  defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 
   info 'Disable auto-correct.'
   defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
