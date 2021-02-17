@@ -46,7 +46,6 @@ function configure_macos_auto {
 
   info 'In ~, show the Library directory and hide others.'
   chflags nohidden "${HOME}/Library"
-  chflags hidden "${HOME}/Applications"
   chflags hidden "${HOME}/Documents"
   chflags hidden "${HOME}/Music"
   chflags hidden "${HOME}/Pictures"
