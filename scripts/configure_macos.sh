@@ -8,19 +8,9 @@ function configure_macos_auto {
   info 'Save to disk (not to iCloud) by default.'
   defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-  info 'Disable Resume system-wide.'
-  defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
-
   info 'Enable full keyboard access for all controls.'
   # (e.g. enable Tab in modal dialogs)
   defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
-
-  info 'Disable auto-correct.'
-  defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-  info 'Set Home as the default location for new Finder windows.'
-  defaults write com.apple.finder NewWindowTarget -string 'PfLo'
-  defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
   info 'Show all filename extensions in Finder.'
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -31,6 +21,9 @@ function configure_macos_auto {
   info 'Disable the warning when changing a file extension.'
   defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
+  info 'Do not show warning when removing from iCloud Drive.'
+  defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool dalse
+
   info 'Show item information near icons on the desktop.'
   /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:showItemInfo true' "${HOME}/Library/Preferences/com.apple.finder.plist"
 
@@ -39,10 +32,6 @@ function configure_macos_auto {
 
   info 'Increase the size of icons on the desktop.'
   /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:iconSize 128' "${HOME}/Library/Preferences/com.apple.finder.plist"
-
-  info 'Use columns view in all Finder windows by default.'
-  # Four-letter codes for the other view modes: 'icnv', 'Nlsv', 'Flwv'
-  defaults write com.apple.finder FXPreferredViewStyle -string 'clmv'
 
   info 'In ~, show the Library directory and hide others.'
   chflags nohidden "${HOME}/Library"
@@ -56,20 +45,6 @@ function configure_macos_auto {
   defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
   # Follow the keyboard focus while zoomed in
   defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
-  info 'Set hot corners.'
-  # Possible values:
-  #  0: no-op
-  #  2: Mission Control
-  #  3: Show application windows
-  #  4: Desktop
-  #  5: Start screen saver
-  #  6: Disable screen saver
-  #  7: Dashboard
-  # 10: Put display to sleep
-  # 11: Launchpad
-  # Top right screen corner → Notification Center
-  defaults write com.apple.dock wvous-tr-corner -int 12
 
   info 'Make Dock icons of hidden applications translucent'
   defaults write com.apple.dock showhidden -bool true
