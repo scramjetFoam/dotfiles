@@ -1,6 +1,7 @@
 function install_brew_apps {
   info 'Installing Homebrew packages.'
   brew install aria2 cpulimit duti exiftool ffmpeg gifski git handbrake hr imagemagick jq kepubify mas massren media-info megatools mkvtoolnix mp4v2 neovim ripgrep rmlint shellcheck trash tree youtube-dl z
+  brew install --HEAD mpv
 
   info 'Installing Homebrew ZSH plugins.'
   brew install zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
@@ -10,7 +11,6 @@ function install_brew_apps {
 
   brew tap vitorgalvao/tiny-scripts
   brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-helpers alfred-workflow-update alfred-workflows-renamer app-icon-extract calm-notifications cask-analytics cli-approve-button cli-merge-button gfv human-media-time labelcolor lossless-compress makeicns mtg-wallpapers pedir-gas pinboard-backup pinboard-link-check pinboard-url-update pinboard-waybackmachine pkg-extract podbook progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
-  brew install --HEAD vitorgalvao/mpv/mpv
 }
 
 function install_cask_apps {
