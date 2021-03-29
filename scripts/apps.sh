@@ -10,7 +10,10 @@ function install_brew_apps {
 
   brew tap vitorgalvao/tiny-scripts
   brew install alfred-add-requested alfred-placeholder-workflows alfred-rebuild-notificator alfred-rebuild-helpers alfred-workflow-update alfred-workflows-renamer app-icon-extract calm-notifications cask-analytics cli-approve-button cli-merge-button gfv human-media-time labelcolor lossless-compress makeicns mtg-wallpapers pedir-gas pinboard-backup pinboard-link-check pinboard-url-update pinboard-waybackmachine pkg-extract progressbar ringtonemaker rtp-download seren trello-purge-archives upload-file
+
+  info 'Installing mpv'
   brew install --HEAD vitorgalvao/mpv/mpv
+  find "${HOMEBREW_CELLAR}" -name 'mpv.app' | xargs -I % mv % '/Applications'
 }
 
 function install_cask_apps {
