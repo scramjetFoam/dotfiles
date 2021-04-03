@@ -58,10 +58,6 @@ function configure_macos_auto {
   info 'Use Cloudflare and APNIC DNS servers'
   sudo networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1
 
-  info 'Stop media keys from opening Apple Music'
-  launchctl bootout "gui/$(id -u "${USER}")/com.apple.rcd" # Stop it now
-  launchctl disable "gui/$(id -u "${USER}")/com.apple.rcd" # Do not enable after restart
-
   info 'Applying options.'
   for app in 'Dock' 'Finder'; do
     killall "${app}" &> /dev/null
