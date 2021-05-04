@@ -2,31 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Label</key>
-	<string>com.vitorgalvao.launchd.cleanup.weekly</string>
-	<key>EnvironmentVariables</key>
-	<dict>
-		<key>PATH</key>
+        <key>Label</key>
+        <string>com.vitorgalvao.launchd.cleanup.weekly</string>
+        <key>EnvironmentVariables</key>
+        <dict>
+                <key>PATH</key>
                 <string>/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-	</dict>
-	<key>ProgramArguments</key>
-	<array>
-		<string>/bin/zsh</string>
-		<string>-c</string>
-		<string>for script in &quot;${HOME}/Dropbox/Libraries/CleanupScripts/weekly/&quot;*; do &quot;${script}&quot;; done</string>
-	</array>
-	<key>StandardOutPath</key>
-	<string>/tmp/weekly_cleanup_script.log</string>
-	<key>StandardErrorPath</key>
-	<string>/tmp/weekly_cleanup_script.log</string>
-	<key>StartCalendarInterval</key>
-	<dict>
-		<key>Hour</key>
-		<integer>20</integer>
-		<key>Minute</key>
-		<integer>0</integer>
-		<key>Weekday</key>
-		<integer>6</integer>
-	</dict>
+        </dict>
+        <key>ProgramArguments</key>
+        <array>
+                <string>/bin/zsh</string>
+                <string>-c</string>
+                <string>for script in &quot;${HOME}/Dropbox/Libraries/CleanupScripts/weekly/&quot;*; do &quot;${script}&quot;; done</string>
+        </array>
+        <key>StandardOutPath</key>
+        <string>/tmp/weekly_cleanup_script.log</string>
+        <key>StandardErrorPath</key>
+        <string>/tmp/weekly_cleanup_script.log</string>
+        <key>StartCalendarInterval</key>
+        <dict>
+                <key>Hour</key>
+                <integer>20</integer>
+                <key>Minute</key>
+                <integer>0</integer>
+                <key>Weekday</key>
+                <integer>6</integer>
+        </dict>
 </dict>
 </plist>
