@@ -5,7 +5,7 @@ function message {
 
   for i in "${!all_colors[@]}"; do
     if [[ "${all_colors[${i}]}" == "${bullet_color}" ]]; then
-      local color_index="${i}"
+      local -r color_index="${i}"
       echo -e "$(tput setaf "${i}")•$(tput sgr0) ${message}"
       break
     fi
