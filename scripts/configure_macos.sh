@@ -34,7 +34,9 @@ function configure_macos_auto {
   /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:iconSize 128' "${HOME}/Library/Preferences/com.apple.finder.plist"
 
   info 'In ~, show the Library directory and hide others.'
+  setfile -a v "${HOME}/Library"
   chflags nohidden "${HOME}/Library"
+
   chflags hidden "${HOME}/Documents"
   chflags hidden "${HOME}/Music"
   chflags hidden "${HOME}/Pictures"
