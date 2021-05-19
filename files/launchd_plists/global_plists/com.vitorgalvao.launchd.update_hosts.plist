@@ -8,10 +8,8 @@
         <array>
                 <string>/bin/zsh</string>
                 <string>-c</string>
-                <string>/usr/bin/curl 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts' --output /private/etc/hosts &amp;&amp; dscacheutil -flushcache &amp;&amp; killall -HUP mDNSResponder</string>
+                <string>/usr/bin/curl --silent 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts' --output /private/etc/hosts &amp;&amp; dscacheutil -flushcache &amp;&amp; killall -HUP mDNSResponder</string>
         </array>
-                <key>RunAtLoad</key>
-                <true/>
         <key>StartCalendarInterval</key>
         <dict>
                 <key>Hour</key>
