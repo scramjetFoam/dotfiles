@@ -18,7 +18,10 @@ function install_python {
 
   pyenv install "$(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\|b' | tail -1)" # Install latest stable python
   pyenv global "$(pyenv versions | tail -1 | sed 's/^[\* ]*//;s/ .*//')" # Switch to latest installed python
-  eval "$(pyenv init -)" # Activate pyenv
+
+  # Activate pyenv
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
 
   # Install some eggs
   pip install neovim
