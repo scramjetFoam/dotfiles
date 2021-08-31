@@ -16,7 +16,7 @@ function install_python {
   rm -rf "${HOME}/.pyenv" # Get rid of previous install, if any
   brew install pyenv
 
-  pyenv install "$(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match 'dev\|a\|b' | tail -1)" # Install latest stable python
+  pyenv install "$(pyenv install --list | sed 's/^  //' | grep '^\d' | grep --invert-match '[a-zA-Z]' | tail -1)" # Install latest stable python
   pyenv global "$(pyenv versions | tail -1 | sed 's/^[\* ]*//;s/ .*//')" # Switch to latest installed python
 
   # Activate pyenv
